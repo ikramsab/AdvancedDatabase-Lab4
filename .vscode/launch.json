@@ -10,7 +10,7 @@
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}",
-            "args" : ["jdbc:mysql://localhost:3306/lab3?serverTimezone=UTC", "root", ""]
+            "args" : ["jdbc:mysql://localhost:3306/lab4?serverTimezone=UTC", "root", ""]
         },
         {
             "type": "java",
@@ -18,7 +18,7 @@
             "request": "launch",
             "mainClass": "Main",
             "projectName": "AdvancedDatabase-Lab4_4f804bcf",
-            "args" : ["jdbc:mysql://localhost:3306/lab3?serverTimezone=UTC", "root", ""]
+            "args" : ["jdbc:mysql://localhost:3306/lab4?serverTimezone=UTC", "root", ""]
         }
     ]
 }
