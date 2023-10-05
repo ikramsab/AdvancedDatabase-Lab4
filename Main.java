@@ -19,31 +19,45 @@ public class Main {
         }
 
         DataAccess database = new DataAccess(args[0], args[1], args[2]);// step 1 = making a connection
-    
-        //exercice 2 test 
-       // List<EmployeeInfo> employees = database.getEmployees();
-       // System.out.println(employees);
 
+        // exercice 2 test
+        // List<EmployeeInfo> employees = database.getEmployees();
+        // System.out.println(employees);
 
-        //exercice 5 test
-        List<DepartmentInfo> departments = database.getDepartmentsPS(null,null, null);
-        System.out.println(departments);
-    
-        //exercice 4/3 test 
-       /* boolean result  = database.raiseSalaryPS("CLERK", 100);
+        // exercice 5 test
+        // List<DepartmentInfo> departments = database.getDepartmentsPS(null,null,
+        // null);
+        // System.out.println(departments);
 
-         if (result) {
-            System.out.println("Salary raised");
-        } else {
-            System.out.println("Salary not raised");
-        }
-        
-        employees = database.getEmployees();
-        System.out.println(employees);*/ 
+        // exercice 4/3 test
+        /*
+         * boolean result = database.raiseSalaryPS("CLERK", 100);
+         * 
+         * if (result) {
+         * System.out.println("Salary raised");
+         * } else {
+         * System.out.println("Salary not raised");
+         * }
+         * 
+         * employees = database.getEmployees();
+         * System.out.println(employees);
+         */
 
+        // exercise 6 part 1 test success
+        // List<String> ResultQuery = database.executeQuery("SELECT * FROM emp ");
+        // System.out.println(ResultQuery);
+        // ResultQuery = database.ExecuteStatement("Update emp set sal = sal + 100 where
+        // job = 'CLERK' ");
+        // System.out.println(ResultQuery);
 
-
-        database.closeConnection();
+        // exercise 6 part 2 test success
+        List<String> ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
+        System.out.println(ResultQuery);
+        ResultQuery = database.ExecuteStatementPS("Update emp set sal = sal + 100 where job = 'CLERK' ");
+        System.out.println(ResultQuery);
+        ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
+        System.out.println(ResultQuery);
+        database.closeConnection();   
 
     }
 
