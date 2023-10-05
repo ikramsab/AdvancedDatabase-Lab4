@@ -4,6 +4,7 @@ import java.util.List;
 import java.sql.*;
 
 import model.DataAccess;
+import model.DepartmentInfo;
 import model.EmployeeInfo;
 
 public class Main {
@@ -19,12 +20,17 @@ public class Main {
 
         DataAccess database = new DataAccess(args[0], args[1], args[2]);// step 1 = making a connection
     
-        //exercice 2
-        List<EmployeeInfo> employees = database.getEmployees();
-        System.out.println(employees);
+        //exercice 2 test 
+       // List<EmployeeInfo> employees = database.getEmployees();
+       // System.out.println(employees);
+
+
+        //exercice 5 test
+        List<DepartmentInfo> departments = database.getDepartmentsPS(null,null, null);
+        System.out.println(departments);
     
-        //exercice 3
-        boolean result  = database.raiseSalaryPS("CLERK", 100);
+        //exercice 4/3 test 
+       /* boolean result  = database.raiseSalaryPS("CLERK", 100);
 
          if (result) {
             System.out.println("Salary raised");
@@ -33,7 +39,7 @@ public class Main {
         }
         
         employees = database.getEmployees();
-        System.out.println(employees);
+        System.out.println(employees);*/ 
 
 
 

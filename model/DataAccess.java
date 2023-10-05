@@ -87,27 +87,36 @@ public class DataAccess {
  public List<DepartmentInfo> getDepartments(Integer id, String name, String location){
 
     List<DepartmentInfo> departments = new ArrayList<>();
-    String query = "SELECT * FROM dept WHERE ";
-    if (id != null) {
-        query += "deptno = " + id;
-    }
-    if (name != null) {
+
+    String query = "SELECT * FROM dept  ";
+    if (id != null || name != null || location != null) {
+        query += " WHERE";
+    
         if (id != null) {
-            query += " AND ";
+            query += " did = " + id;
         }
-        query += "dname = '" + name + "'";
-    }
-    if (location != null) {
-        if (id != null || name != null) {
-            query += " AND ";
+    
+        if (name != null) {
+            if (id != null) {
+                query += " AND";
+            }
+            query += " dname = '" + name + "'";
         }
-        query += "loc = '" + location + "'";
+    
+        if (location != null) {
+            if (id != null || name != null) {
+                query += " AND";
+            }
+            query += " dloc = '" + location + "'";
+        }
     }
+    
     try {
+        System.out.println(query);
         Statement stat1 = connection.createStatement();
         ResultSet result1 = stat1.executeQuery(query);
         while (result1.next()) {
-            departments.add(new DepartmentInfo(result1.getInt("deptno"), result1.getString("dname"), result1.getString("loc")));
+            departments.add(new DepartmentInfo(result1.getInt("did"), result1.getString("dname"), result1.getString("dloc")));
         }
     } catch (SQLException e) {
         System.out.println("Error: " + e.getMessage());
@@ -120,21 +129,26 @@ public class DataAccess {
 public List<DepartmentInfo> getDepartmentsPS(Integer id, String name, String location){
 
     List<DepartmentInfo> departments = new ArrayList<>();
-    String query = "SELECT * FROM dept WHERE ";
-    if (id != null) {
-        query += "deptno = ?";
-    }
-    if (name != null) {
-        if (id != null) {
-            query += " AND ";
+    String query = "SELECT * FROM dept  ";
+
+    if (id != null || name != null || location != null) {
+        query += " WHERE ";
+
+        if(id != null){
+            query += "did = ?";
         }
-        query += "dname = ?";
-    }
-    if (location != null) {
-        if (id != null || name != null) {
-            query += " AND ";
+        if(name != null){
+            if(id != null){
+                query += " AND ";
+            }
+            query += "dname = ?";
         }
-        query += "loc = ?";
+        if(location != null){
+            if(id != null || name != null){
+                query += " AND ";
+            }
+            query += "dloc = ?";
+        }
     }
     try {
         PreparedStatement stat2 = connection.prepareStatement(query);
@@ -152,12 +166,17 @@ public List<DepartmentInfo> getDepartmentsPS(Integer id, String name, String loc
         }
         ResultSet result1 = stat2.executeQuery();
         while (result1.next()) {
-            departments.add(new DepartmentInfo(result1.getInt("deptno"), result1.getString("dname"), result1.getString("loc")));
+            departments.add(new DepartmentInfo(result1.getInt("did"), result1.getString("dname"), result1.getString("dloc")));
         }
     } catch (SQLException e) {
         System.out.println("Error: " + e.getMessage());
     }
     return departments;
 }
+
+
+
+
+
 
 }
