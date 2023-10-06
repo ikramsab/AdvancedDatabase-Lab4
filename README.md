@@ -23,11 +23,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+For the purpose of this lab you will need 
+* IDE such as Netbeans, IntellijCode or Visual Studio Code
+In my case , i work on VS code
+* You will nee the Java Extention :
+- [Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+
 
 ### Installation
 
