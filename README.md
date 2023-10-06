@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/tamzi/ReadMe-MasterTemplates">
-    <img src="https://raw.githubusercontent.com/tamzi/ReadMe-MasterTemplates/master/art/readmemastertemplate.jpg" alt="ReadMe Master Templates" width=230 height=150>
+    <img src="[https://raw.githubusercontent.com/tamzi/ReadMe-MasterTemplates/master/art/readmemastertemplate.jpg](https://www.oracle.com/a/ocom/img/jdbc.svg)" alt="ReadMe Master Templates" width=230 height=150>
   </a>
   <h2 align="center">ReadMe Master Templates</h2>
 
