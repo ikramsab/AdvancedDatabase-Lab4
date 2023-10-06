@@ -1,20 +1,10 @@
-<p align="center">
-  <a href="https://github.com/tamzi/ReadMe-MasterTemplates">
-    <img src="[https://raw.githubusercontent.com/tamzi/ReadMe-MasterTemplates/master/art/readmemastertemplate.jpg](https://www.oracle.com/a/ocom/img/jdbc.svg)" alt="ReadMe Master Templates" width=230 height=150>
-  </a>
-  <h2 align="center">ReadMe Master Templates</h2>
+# Lab: Java Database Connectivity (JDBC)
 
-  <p align="center">
-    If you are working on your projects and using github, the README.md file is a useful starter place for you to write good and clear documentations for  your projects. Use this readMe roject to get started with your project's ReadMe.md file.
-    <br>
-    </p>
-</p>
-
-<br>
+The goal of the lab is to write a utility class named DataAccess that enables an application to transparently access its data, using high-level Java methods. The DataAccess class is meant to hide from the application how its data is actually stored (here, in a relational database) as well as all the complex machinery required to access it (here, JDBC library and SQL statements).
 
 
 ## Table of contents
-- [Description](#description)
+- [Getting Started](#Getting-Started)
 - [Why the MasterTemplates?](#why-the-master-templates)
 - [How to use them](#how-to-use-them)
 - [Roadmap](#roadmap)
@@ -23,6 +13,36 @@
 - [Licence](#licence)
 
 <hr>
+
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+```sh
+git clone https://github.com/your_username_/Project-Name.git
+```
+3. Install NPM packages
+```sh
+npm install
+```
+4. Enter your API in `config.js`
+```JS
+const API_KEY = 'ENTER YOUR API';
+```
+
 
 ### Description
 
