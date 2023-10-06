@@ -5,10 +5,12 @@ The goal of the lab is to write a utility class named DataAccess that enables an
 
 ## Table of contents
 - [Getting Started](#Getting-Started)
-- [Why the MasterTemplates?](#why-the-master-templates)
-- [How to use them](#how-to-use-them)
-- [Roadmap](#roadmap)
-- [Releases](#releases)
+- [Exercice 1](#Exercise-1)
+- [Exercise 2](#Exercise-2)
+- [Exercise 3](#Exercse-3)
+- [Exercise 4](#Exercise-4)
+- [Exercise 5](#Exercise-5)
+- [Exercise 6](#Exercice-6)
 - [Contributors](#contributors)
 - [Licence](#licence)
 
@@ -56,7 +58,7 @@ In this project you wil find the following readMes:
 
 <hr>
 
-### Why the Master Templates?
+### Exercise 1
 
 With the use of version control, there is a huge struggle among most people to do a brief of what their project is about.
 Lets face it, most developers are not into typing out prose to explain what they just built. Others dread the whole process of documenting it.
@@ -77,7 +79,7 @@ ReadMe MasterTemplates:
 
 <hr>
 
-### How to use them
+### Exercise 2
 
 1. All the files are in markdown format. While it is good to learn markdown. It is always great to have the [Markdown CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) bookmarked somewhere in your browser.
 If you can learn it, awesome! It will save you time...But it really is not important: **the more you use markdown, the better you get at it O.o**.
@@ -102,7 +104,7 @@ If you can learn it, awesome! It will save you time...But it really is not impor
 
 <hr>
 
-### Roadmap
+### Exercice 3
   🚧 👷‍ ⛏ 👷 🔧️ 🚧
 - [x] Create An Android Projects ReadMe.
 - [x] Create a flutter Projects ReadMe.
@@ -127,23 +129,29 @@ The project is still very incomplete but under development. If there's an [issue
 
 Before you contribute though read the contributing guide here: [CONTRIBUTING GUIDE](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/contributing.md)
 
+<hr>
 
+### Exercise 4
+
+to do ...
 
 <hr>
 
-### Releases
-- [x] [code of conduct](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/CodeOfConduct.md)
-- [x] [contribution](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/contributing.md)
-- [x] [Android ReadMe version](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/android)
-- [x] [Web version](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/website)
-- [x] [A brief ReadMe](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/brief/brief.md)
+### Exercise 5
+
+to do ...
+
+<hr>
+
+### Exercise 6
+
+to do ...
+
+<hr>
 
 
 ### Contributors
 
-<a href="https://github.com/tamzi/ReadMe-MasterTemplates/graphs/contributors">
-  <img src="https://contributors-img.firebaseapp.com/image?repo=tamzi/ReadMe-MasterTemplates" />
-</a>
 
 Twitter:  [@tamrefrank](https://twitter.com/tamrefrank)
 
