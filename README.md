@@ -26,8 +26,8 @@ To get a local copy up and running follow these simple example steps.
 For the purpose of this lab you will need 
 * IDE such as Netbeans, IntellijCode or Visual Studio Code
 In my case , i work on VS code
-* You will nee the Java Extention :
-- [Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+* You will need the Java Extension :[Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+
 
 
 ### Installation
@@ -60,22 +60,19 @@ In this project you wil find the following readMes:
 <hr>
 
 ### Exercise 1
+The needed arguments are :
 
-With the use of version control, there is a huge struggle among most people to do a brief of what their project is about.
-Lets face it, most developers are not into typing out prose to explain what they just built. Others dread the whole process of documenting it.
-<br>
-In addition, what to include so that someone else working on their project can benefit from their amazing work can sometimes be a hard task.
-<br>
-This is the foundation behind this project. A sample project that allows you to get started with a well written **ReadMe.md** file.
+* url link
+* username
+* passeword
 
-ReadMe MasterTemplates:
-* Give developers an easy time when writing their project ReadMe.
+To stock them in **String[] args** :
+* Open the Run configuration
+  ```sh
+   "args" : ["URL", "Username", "Password"]
+```
+  
 
-* Enable more time to be spent coding out their projects.
-
-* Help us have better github projects without one liners.
-
-* Help people who want to use the various projects on github to know more about the project's architecture.
 
 
 <hr>
