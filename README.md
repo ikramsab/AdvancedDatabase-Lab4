@@ -26,11 +26,16 @@ To get a local copy up and running follow these simple example steps.
 For the purpose of this lab you will need 
 * IDE such as Netbeans, IntellijCode or Visual Studio Code
 In my case , i work on VS code
-* You will need the Java Extension :[Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+* You will also need the Java Extension :[Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
 
 
 ### Installation
+**This part is from the Lab paper **
+
+1. Download the jar file at : [Dowload MySQL connector](https://github.com/ikramsab/MySQL-JDBC-Connector)
+   Add those files to the library of your project.
+2. 
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
