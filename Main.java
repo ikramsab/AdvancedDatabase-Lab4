@@ -21,8 +21,8 @@ public class Main {
         DataAccess database = new DataAccess(args[0], args[1], args[2]);// step 1 = making a connection
 
         // exercice 2 test
-        // List<EmployeeInfo> employees = database.getEmployees();
-        // System.out.println(employees);
+         List<EmployeeInfo> employees = database.getEmployees();
+         System.out.println(employees);
 
         // exercice 5 test
         // List<DepartmentInfo> departments = database.getDepartmentsPS(null,null,
@@ -51,13 +51,13 @@ public class Main {
         // System.out.println(ResultQuery);
 
         // exercise 6 part 2 test success
-        List<String> ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
+       /*  List<String> ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
         System.out.println(ResultQuery);
         ResultQuery = database.ExecuteStatementPS("Update emp set sal = sal + 100 where job = 'CLERK' ");
         System.out.println(ResultQuery);
         ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
         System.out.println(ResultQuery);
-        database.closeConnection();   
+        database.closeConnection();   */ 
 
     }
 

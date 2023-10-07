@@ -25,6 +25,8 @@ public class DataAccess {
         return connection.prepareStatement(query);
     }
 
+    
+
     // EXERCICE 2
     public List<EmployeeInfo> getEmployees() throws SQLException {
         List<EmployeeInfo> employees = new ArrayList<>();
@@ -32,7 +34,7 @@ public class DataAccess {
         ResultSet result1 = stat1.executeQuery("SELECT * FROM emp"); // step 3 = executing a query because we are
                                                                      // reading data 'select'
         while (result1.next()) {
-            employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"), result1.getFloat("sal")));
+            employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"), result1.getFloat("sal"), result1.getString("job")));
         }
         return employees;
     }
@@ -180,7 +182,7 @@ public class DataAccess {
 
             while (result1.next()) {
                 EmployeeInfo line = new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"),
-                        result1.getFloat("sal"));
+                        result1.getFloat("sal"), result1.getString("job"));
                 result.add(line.toString());
             }
         } catch (SQLException e) {
@@ -222,7 +224,7 @@ public class DataAccess {
             if (query.contains("emp")) {
                 while (resultSet.next()) {
                     EmployeeInfo line = new EmployeeInfo(resultSet.getInt("eid"), resultSet.getString("ename"),
-                            resultSet.getFloat("sal"));
+                            resultSet.getFloat("sal"), resultSet.getString("job"));
                     result.add(line.toString());
                 }
             } else if (query.contains("dept")) {

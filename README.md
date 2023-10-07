@@ -29,83 +29,93 @@ In my case , i work on VS code
 * You will also need the Java Extension :[Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
 
-
 ### Installation
-**This part is from the Lab paper **
+**This part is from the Lab paper**
 
 1. Download the jar file at : [Dowload MySQL connector](https://github.com/ikramsab/MySQL-JDBC-Connector)
    Add those files to the library of your project.
-2. 
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
-
-
-### Description
-
-Despite the fact that you writing a technical document, it needs to be clear. Describing your project makes it easier for people to contribute to it and alos use it!
-
-In this project you wil find the following readMes:
-
- - [Android Project ReadMe template](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/android)
- - [Web project template](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/website)
- - A General contibutions guide in each project
+2. Set the name of the driver by executing the following statement:
+   ```sh
+   System.setProperty("jdbc.drivers", "com.mysql.jdbc.Driver");
+   ```
+3. .Set the JDBC URL by executing the following statement:
+   ```sh
+   String url = "jdbc:mysql://[host][:port]/[database]";
+   ```
 
 <hr>
+
+**The following parts show how I resolved each exercise. I won't be sharing a lot of code here since it's in the project file within the repository. However, I will clearly indicate where you can find the code to illustrate my explanations**
+
 
 ### Exercise 1
-The needed arguments are :
 
-* url link
-* username
-* passeword
+1. The first thing to do is to create a new project. In my case, I created a new folder named **LabJDBC**. Then, I opened it with VS code and created a new file named **DataAccess.java**. This file will contain the class DataAccess.
 
-To stock them in **String[] args** :
-* Open the Run configuration
+    [Code source de la classe DataAccess](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/main/model/DataAccess.java)
+
+2. The role of the class DataAccess is to hide from the application how its data is actually stored (here, in a relational database) as well as all the complex machinery required to access it (here, JDBC library and SQL statements). To do so, we will use the following methods :
+
+* **public DataAccess(String url, String login, String password)** : This is the constructor of the class. It will be used to initialize the connection with the database. The needed arguments are :
+
+  * url link
+  * username
+  * passeword
+
+  Those arguments will be taken from the **String[] args** . To set them in the args array, you need to open the **Run configuration** and add the following line :
   ```sh
    "args" : ["URL", "Username", "Password"]
+  ```
+
+In this class the only instance variable is **Connection connection**. It will be used to store the connection with the database. 
+
+* **public static void closeConnection()** : This method is used to close the connection with the database.
+
+* **public Statement createStatement()** : This method is used to create a statement. It will be used to execute the SQL queries.
+
+* **public PreparedStatement prepareStatement(String query)** : This method is used to prepare a statement. It will be used to execute the SQL queries.
+
+3. Now that we have the DataAccess class, we need to create a new class named **Main.java**. This class will be used to test the DataAccess class.
+
+4. In the Main class, we will create a new instance of the DataAccess class. To do so, we will use the following line :
+```sh
+DataAccess dataAccess = new DataAccess(args[0], args[1], args[2]);
 ```
-  
+You might be wondering why we are using the args array. Well, it's because we want to be able to change the url, username and password without having to change the code. This way, we can use the same code for different databases.
 
-
-
-<hr>
-
+Also, you might get an error because in for some, the password might be empty. To fix this, you can add the following line :
+```sh
+if (args.length == 2) {
+            args = Arrays.copyOf(args, 3);
+            args[2] = "";
+        }
+```
 ### Exercise 2
 
-1. All the files are in markdown format. While it is good to learn markdown. It is always great to have the [Markdown CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) bookmarked somewhere in your browser.
-If you can learn it, awesome! It will save you time...But it really is not important: **the more you use markdown, the better you get at it O.o**.
+ To write the metho **List<EmployeeInfo>getAllEmployees()** we will use the following code :
+  
+  I did the following steps :
 
-2. There are different Markdown templates for each type of project as below: 
-    * [Android](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/android)- For android focused ReadMe
-    * [Website](https://github.com/tamzi/ReadMe-MasterTemplates/tree/master/website)- For your HTML&CSS JS projects
-    * [brief](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/brief/brief.md)  - minimal version
-    * IOS ...coming soon - FOr IOS projects
-    * Scripts ....coming soon - For Python, JS type projects
+  * Create an array list of EmployeeInfo.
+  * Create a new statement.
+  * Execute the query by using **executeQuery()** method since we are using a select query.
+  * Create a new EmployeeInfo object for each row of the result set.To go from one row to another, we will use the **next()** method.
+  * Add the EmployeeInfo object to the array list.
 
+  [Click here to go directly to the getAllEmployees() method](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/d005ca198b5c50ee7250fbccf9019f27e9c4f62c/model/DataAccess.java#L29)
 
-3. Copy the respective files depending on the type of project. Paste it and edit the file.
-
-4. As a general rule, provide link to download the app if its published on the playstore /website if it is hosted at the description section above.See image below
-:point_down: :point_down:
-
-![Edit the Website link](https://raw.githubusercontent.com/tamzi/ReadMe-MasterTemplates/master/website/art/web.png)
-
-5. Want to give a suggestion? Feel free: it's open source. you can [raise issues here](https://github.com/tamzi/ReadMe-MasterTemplates/issues):
+  Note : EmployeeInfo is a class created to store the data of each employee. 
 
 
-<hr>
+
+
+
+
+
+
+
+
+
 
 ### Exercice 3
   🚧 👷‍ ⛏ 👷 🔧️ 🚧
