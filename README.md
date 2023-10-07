@@ -20,12 +20,18 @@ The goal of the lab is to write a utility class named DataAccess that enables an
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
+You have acces to the lab paper [here](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/jdbc.lab.pdf)
+
+If you want to test the different exercises of the lab , you can uncomment the part that contains the exercise you want to test in the **main()** method of the **Main.java** class.
+
+Link your url in the launch.json file ann also dowload the .jar files and set thel in the settings.json file. If you dowload this repository the informations set are mine so you will need to change them.
+
 
 ### Prerequisites
 
 For the purpose of this lab you will need 
-* IDE such as Netbeans, IntellijCode or Visual Studio Code
-In my case , i work on VS code
+* IDE such as Netbeans, Visual Studio Code or IntelliJ .
+In my case , I used Visual Studio Code.
 * You will also need the Java Extension :[Extention pack for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
 
@@ -136,21 +142,95 @@ Since 1=1 is always true.
 
 ### Exercise 4
 
-to write the second version of **getEmployees()** and **raiseSalary()**, named **getEmployeesPS()** and **raiseSalaryPS()**, that uses prepared statements instead of statements
+To write the second version of **getEmployees()** and **raiseSalary()**, named **getEmployeesPS()** and **raiseSalaryPS()**, that uses prepared statements instead of statements, I did the following steps :
 
+* Create a new prepared statement. 
+* Set the parameters of the prepared statement. To do so we will use the **setString()** method and the **setFloat()** method.
+* Execute the query by using **executeQuery()** method since we are using a select query( for getEmployeesPS() method) and **executeUpdate()** method since we are using an update query (for raiseSalaryPS() method).
+* And finish the same way as the previous methods.
+
+[Click here to go directly to the getEmployeesPS() method](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L80C5-L80C12)
+
+[Click here to go directly to the raiseSalaryPS() method](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L59)
+
+Prepare statrement are more efficient than statements because they are precompiled. This means that the database will not have to compile the query each time it is executed. This is why we should always use prepared statements instead of statements.
+
+Now if we try to perform an SQL injection attack, we will get an error because the query will be prepared before being executed.
 
 
 <hr>
 
 ### Exercise 5
 
-to do ...
+To write the method **List<DepartmentInfo> getDepartments()** that returns the list of all the departments, I did the following steps :
+
+For the one using statements :
+
+* Create an array list of DepartmentInfo.
+* Create a string that contains the query.
+* Check every possibility , it mens checking if either name, id, location is null or not.
+* Create a new statement.
+* Creating a result set by executing the query.
+* Create a new DepartmentInfo object for each row of the result set.To go from one row to another, we will use the **next()** method.
+* Add the DepartmentInfo object to the array list.
+
+[Click here to go directly to the getDepartments()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L98)
+
+For the one using prepared statements :
+
+* Create an array list of DepartmentInfo.
+* Create a string that contains the query.
+* Check every possibility , it mens checking if either name, id, location is null or not. But this time in the query there will be a ? instead of the value.
+* Create a new prepared statement.
+* Set the parameters of the prepared statement. To do so we will use the **setString()** method and the **setInt()** method. And to know how many parameters we have , we will increment a counter for each parameter wich is not null.
+* Creating a result set by executing the query.
+* Create a new DepartmentInfo object for each row of the result set.To go from one row to another, we will use the **next()** method.
+* Add the DepartmentInfo object to the array list.
+
+[Click here to go directly to the getDepartmentsPS()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L141)
 
 <hr>
 
 ### Exercise 6
 
-to do ...
+To write the method **List<String>executeQuery(String query)** that executes the specified query (i.e. select statement) on the database. This method will be used to execute any query. I did the following steps :
+
+* Create an array list of String.
+* Create a new statement.
+* Execute the query by using **executeQuery()** method since we are using a select query.
+* Create a new String object for each row of the result set.To go from one row to another, we will use the **next()** method.
+* Add the String object to the array list. By using sur function **toString()** we can get the result of the query in a String format.
+
+[Click here to go directly to the executeQuery()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L191)
+
+
+To write List<String> executeStatement(String statement) that executes any statement (e.g. select, insert, update, etc.) on the database. I did the following steps :
+
+* Change the query into lower case.
+* Check if the query contains the word select.
+* If it contains the word select, we will use the **executeQuery()** method.
+* If it doesn't contain the word select, we will use the **executeUpdate()** method. And we will keep the number of rows affected by the query in a variable. (executeUpdate() returns the number of rows affected by the query)
+
+[Click here to go directly to the executeStatement()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L212)
+
+We can do the same thing using prepared statements. To do so, we will use the following code :
+But it requires more code. Since we need to check if the query contains dept or emp. And we need to set the parameters of the prepared statement. This is the following steps :
+
+*Create an array list of String.
+*Change the query into lower case.
+*create a new prepared statement.
+*Check if the query contains the word dept.
+*If it contains the word dept, we will set the parameters of the prepared statement. To do so we will use the **setString()** method and the **setInt()** method.
+*Check if the query contains the word emp.
+*Do the same but with the right arguments.
+
+[Click here to go directly to the executeQueryPS()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L233C25-L233C39)
+
+
+To do the ExecuteUpdatePS() method, we will do the same thing but we will use the **executeUpdate()** method instead of the **executeQuery()** method. And count the number of rows affected by the query.
+
+[Click here to go directly to the executeUpdatePS()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L261)
+
 
 <hr>
 
@@ -158,15 +238,6 @@ to do ...
 ### Contributors
 
 
-Twitter:  [@tamrefrank](https://twitter.com/tamrefrank)
+Github :  [@ikramsab](https://github.com/ikramsab)
 
-### Licence
-
-
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](#)
-
-
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftamzi%2FReadMe-MasterTemplates.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftamzi%2FReadMe-MasterTemplates?ref=badge_large)
-
-<a href="https://www.producthunt.com/posts/readme-master-templates?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-readme-master-templates" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=186076&theme=light" alt="ReadMe Master Templates - Better ReadMe projects for your projects! | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
+<hr>

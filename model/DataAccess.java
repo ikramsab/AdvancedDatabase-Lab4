@@ -54,7 +54,7 @@ public class DataAccess {
         }
     }
 
-    // EXERCICE 4 car preparedStatement
+    // EXERCICE 4  preparedStatement
 
     public boolean raiseSalaryPS(String job, float amount) throws SQLException {
         int nbRows = 0;
@@ -188,7 +188,7 @@ public class DataAccess {
     }
 
     // exercie 6
-    public List<String> executeQuery(String query) {
+     public List<String> executeQuery(String query) {
 
         List<String> result = new ArrayList<>();
 
@@ -208,6 +208,8 @@ public class DataAccess {
         return result;
 
     }
+   
+    
 
     public List<String> ExecuteStatement(String query) {
 
