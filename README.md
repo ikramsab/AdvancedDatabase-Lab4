@@ -83,7 +83,7 @@ DataAccess dataAccess = new DataAccess(args[0], args[1], args[2]);
 ```
 You might be wondering why we are using the args array. Well, it's because we want to be able to change the url, username and password without having to change the code. This way, we can use the same code for different databases.
 
-Also, you might get an error because in for some, the password might be empty. To fix this, you can add the following line :
+Also, you might get an error because for some, the password might be empty. To fix this, you can add the following line :
 ```sh
 if (args.length == 2) {
             args = Arrays.copyOf(args, 3);
@@ -104,49 +104,41 @@ if (args.length == 2) {
 
   [Click here to go directly to the getAllEmployees() method](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/d005ca198b5c50ee7250fbccf9019f27e9c4f62c/model/DataAccess.java#L29)
 
-  Note : EmployeeInfo is a class created to store the data of each employee. 
+  Note : EmployeeInfo is a class created to store the data of each employee.
+  The class was already given in the lab paper.
 
-
-
-
-
-
-
-
-
+  [Click here to go directly to the EmployeeInfo class](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/b58b6774d92bafbf2f82b5b476451fe58866dc20/model/DepartmentInfo.java)
 
 
 
 ### Exercice 3
-  🚧 👷‍ ⛏ 👷 🔧️ 🚧
-- [x] Create An Android Projects ReadMe.
-- [x] Create a flutter Projects ReadMe.
-- [x] Create a website ReadMe for Html and css and JS projects.
-- [x] Create a brief ReadMe for the quick ones.
-- [ ] Creat a Scripts ReadMe file for Python, php, js type projects
-- [ ] Create a ReadMe file for IOS projects
-- [ ] Create a ReadMe generator for VSCode
-- [ ] Create a documenation page: [WIP documenation](https://tamzi.github.io/ReadMe-MasterTemplates/)
 
+To write the method boolean raiseSalary(String job, float amount) that raises the salary of the employees with the specified job by the specified amount i did the following steps :
 
-You are welcome to help in making  **readMe master templates** better.
+* Create a new statement.
+* Execute the query by using **executeUpdate()** method since we are using an update query.
+* keep the number of rows affected by the query in a variable. (executeUpdate() returns the number of rows affected by the query)
+* If the number of rows affected is greater than 0, return true. Else, return false.
 
-The project is still very incomplete but under development. If there's an [issue](https://github.com/tamzi/ReadMe-MasterTemplates/issues) you'd like to see addressed sooner rather than later:
+[Click here to go directly to the raiseSalary() method](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/b58b6774d92bafbf2f82b5b476451fe58866dc20/model/DataAccess.java#L43C4-L43C4)
 
-- [Open an issue](https://github.com/tamzi/ReadMe-MasterTemplates/issues),
+Next we performed an SQL injection attack. To do so, we used the following code :
 
-    or JUST,
+```sh
+dataAccess.raiseSalary("CLERK OR 1=1", 100);
+```
+Since 1=1 is always true.
 
-- [Fork the project and send a pull request](https://github.com/tamzi/ReadMe-MasterTemplates/pulls).
+, the query will affect all the employees. To prevent this, we will use the **prepareStatement()** method instead of the **createStatement()** method. This way, the query will be prepared before being executed.
 
-
-Before you contribute though read the contributing guide here: [CONTRIBUTING GUIDE](https://github.com/tamzi/ReadMe-MasterTemplates/blob/master/contributing.md)
 
 <hr>
 
 ### Exercise 4
 
-to do ...
+to write the second version of **getEmployees()** and **raiseSalary()**, named **getEmployeesPS()** and **raiseSalaryPS()**, that uses prepared statements instead of statements
+
+
 
 <hr>
 

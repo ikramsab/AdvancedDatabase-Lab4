@@ -24,6 +24,15 @@ public class Main {
          List<EmployeeInfo> employees = database.getEmployees();
          System.out.println(employees);
 
+         boolean result = database.raiseSalary("CLERK OR 1=1", 100);
+          if (result) {
+          System.out.println("Salary raised");
+          } else {
+          System.out.println("Salary not raised");
+          }
+          
+         employees = database.getEmployees();
+         System.out.println(employees);
         // exercice 5 test
         // List<DepartmentInfo> departments = database.getDepartmentsPS(null,null,
         // null);

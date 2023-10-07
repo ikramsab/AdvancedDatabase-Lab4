@@ -25,8 +25,6 @@ public class DataAccess {
         return connection.prepareStatement(query);
     }
 
-    
-
     // EXERCICE 2
     public List<EmployeeInfo> getEmployees() throws SQLException {
         List<EmployeeInfo> employees = new ArrayList<>();
@@ -34,7 +32,8 @@ public class DataAccess {
         ResultSet result1 = stat1.executeQuery("SELECT * FROM emp"); // step 3 = executing a query because we are
                                                                      // reading data 'select'
         while (result1.next()) {
-            employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"), result1.getFloat("sal"), result1.getString("job")));
+            employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"), result1.getFloat("sal"),
+                    result1.getString("job")));
         }
         return employees;
     }
@@ -76,6 +75,23 @@ public class DataAccess {
             return false;
         }
 
+    }
+
+    public List<EmployeeInfo>getEmployeesPS(String job, float amount) throws SQLException {
+        List<EmployeeInfo> employees = new ArrayList<>();
+        try {
+            PreparedStatement stat2 = connection.prepareStatement("SELECT * FROM emp WHERE job = ? AND sal > ?");
+            stat2.setString(1, job);
+            stat2.setFloat(2, amount);
+            ResultSet result1 = stat2.executeQuery();
+            while (result1.next()) {
+                employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"),
+                        result1.getFloat("sal"), result1.getString("job")));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return employees;
     }
 
     // exercice 5
@@ -214,7 +230,7 @@ public class DataAccess {
         return result;
     }
 
-    public List<String> executeQueryPS (String query) {
+    public List<String> executeQueryPS(String query) {
         List<String> result = new ArrayList<>();
         query = query.toLowerCase();
 
@@ -242,7 +258,7 @@ public class DataAccess {
         return result;
     }
 
-    public List<String> ExecuteStatementPS (String query){
+    public List<String> ExecuteStatementPS(String query) {
         List<String> result = new ArrayList<>();
         query = query.toLowerCase();
 
