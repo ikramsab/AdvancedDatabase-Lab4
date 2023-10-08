@@ -113,7 +113,7 @@ if (args.length == 2) {
   Note : EmployeeInfo is a class created to store the data of each employee.
   The class was already given in the lab paper.
 
-  [Click here to go directly to the EmployeeInfo class](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/b58b6774d92bafbf2f82b5b476451fe58866dc20/model/DepartmentInfo.java)
+  [Click here to go directly to the EmployeeInfo class](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/b58b6774d92bafbf2f82b5b476451fe58866dc20/model/EmployeeInfo.java)
 
 
 
