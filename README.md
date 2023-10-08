@@ -115,6 +115,7 @@ if (args.length == 2) {
 
   [Click here to go directly to the EmployeeInfo class](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/b58b6774d92bafbf2f82b5b476451fe58866dc20/model/EmployeeInfo.java)
 
+[Click here to see the output test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo1-output.png)
 
 
 ### Exercice 3
@@ -137,6 +138,9 @@ Since 1=1 is always true.
 
 , the query will affect all the employees. To prevent this, we will use the **prepareStatement()** method instead of the **createStatement()** method. This way, the query will be prepared before being executed.
 
+[Click here to see the line test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo3-code-line-test.png)
+
+[Click here to see the output test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo3-output.png)
 
 <hr>
 
@@ -157,6 +161,9 @@ Prepare statrement are more efficient than statements because they are precompil
 
 Now if we try to perform an SQL injection attack, we will get an error because the query will be prepared before being executed.
 
+[Click here to see the line test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo4-code-line-test.png)
+
+[Click here to see the output test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo4-PS-output.png)
 
 <hr>
 
@@ -188,6 +195,10 @@ For the one using prepared statements :
 * Add the DepartmentInfo object to the array list.
 
 [Click here to go directly to the getDepartmentsPS()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L141)
+
+[Click here to see the first test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo5-test-and-output.png)
+
+[Click here to see the second test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo5-test-and-output-2.png)
 
 <hr>
 
@@ -231,6 +242,9 @@ To do the ExecuteUpdatePS() method, we will do the same thing but we will use th
 
 [Click here to go directly to the executeUpdatePS()](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/f35c292488a713f506c86b47ade65fbc1a81863f/model/DataAccess.java#L261)
 
+[Click here to see the first test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo6-test-and-output-part1.png)
+
+[Click here to see the second test](https://github.com/ikramsab/AdvancedDatabase-Lab4/blob/391a25760ba501c45fb13920c06821df006fdd94/images/exo6-test-and-output-part2.png)
 
 <hr>
 
