@@ -77,12 +77,10 @@ public class DataAccess {
 
     }
 
-    public List<EmployeeInfo>getEmployeesPS(String job, float amount) throws SQLException {
+    public List<EmployeeInfo>getEmployeesPS() throws SQLException {
         List<EmployeeInfo> employees = new ArrayList<>();
         try {
-            PreparedStatement stat2 = connection.prepareStatement("SELECT * FROM emp WHERE job = ? AND sal > ?");
-            stat2.setString(1, job);
-            stat2.setFloat(2, amount);
+            PreparedStatement stat2 = connection.prepareStatement("SELECT * FROM emp");
             ResultSet result1 = stat2.executeQuery();
             while (result1.next()) {
                 employees.add(new EmployeeInfo(result1.getInt("eid"), result1.getString("ename"),
@@ -92,6 +90,7 @@ public class DataAccess {
             System.out.println("Error: " + e.getMessage());
         }
         return employees;
+        
     }
 
     // exercice 5

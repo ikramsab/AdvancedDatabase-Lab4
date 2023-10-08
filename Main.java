@@ -29,12 +29,12 @@ public class Main {
 
         // ---------------------exercice 3 test------------------------------------------
 
-        /*
+        
 
           //diplay the list of employees first
 
-            List<EmployeeInfo> employees = database.getEmployees();
-            System.out.println(employees);  
+        /*  List<EmployeeInfo> employees = database.getEmployees();
+          System.out.println(employees);  
 
           boolean result = database.raiseSalary("CLERK", 100); 
           if (result) {
@@ -45,20 +45,20 @@ public class Main {
             //display the list of employees after
             
             employees = database.getEmployees();
-            System.out.println(employees);
+            System.out.println(employees); */
 
-         */
+         
 
         // ---------------------exercice 3 test END -------------------------------------
 
         // ---------------------exercice 4 test------------------------------------------
 
-        /*
+        
           //diplay the list of employees first
-          List<EmployeeInfo> employees = database.getEmployeesPS();
+        /*   List<EmployeeInfo> employees = database.getEmployeesPS();
          System.out.println(employees);
           
-         boolean result = database.raiseSalaryPS("CLERK", 100);
+         boolean result = database.raiseSalaryPS("MANAGER", 100);
           
           if (result) {
           System.out.println("Salary raised");
@@ -68,33 +68,33 @@ public class Main {
           
           //display the list of employees after
           employees = database.getEmployeesPS();
-          System.out.println(employees);
-         */
+          System.out.println(employees);*/
+         
         
         // ---------------------exercice 4 test END -------------------------------------
 
         // ---------------------exercice 5 test------------------------------------------
 
-        /*
-          List<DepartmentInfo> departments = database.getDepartmentsPS(null,null,
-          null); System.out.println(departments);
-         */
+        
+          /*List<DepartmentInfo> departments = database.getDepartmentsPS(10,null,
+          null); System.out.println(departments);*/
+        
 
         // ---------------------exercice 5 test END -------------------------------------
 
         // ---------------------exercice 6 test------------------------------------------
 
-        /*
-          List<String> ResultQuery = database.executeQuery("SELECT * FROM emp ");
+        
+         /*  List<String> ResultQuery = database.executeQuery("SELECT * FROM emp ");
           System.out.println(ResultQuery);
-          ResultQuery = database.ExecuteStatement("Update emp set sal = sal + 100 where job = 'CLERK' "
-          ); System.out.println(ResultQuery);
-         */
+          ResultQuery = database.ExecuteStatement("Update emp set sal = sal + 100 where job = 'ANALYST' "
+          ); System.out.println(ResultQuery);*/
+         
 
-        /*  List<String> ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
+          List<String> ResultQuery = database.executeQueryPS("SELECT * FROM emp where job = 'CLERK'");
           System.out.println(ResultQuery);
           ResultQuery = database.ExecuteStatementPS("Update emp set sal = sal + 100 where job = 'CLERK' ");
-          System.out.println(ResultQuery);*/
+          System.out.println(ResultQuery);
 
         database.closeConnection();
 
